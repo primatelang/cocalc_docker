@@ -1,0 +1,19 @@
+{
+ "display_name": "Anaconda 2",
+ "argv": [
+  "/projects/anaconda2/bin/python2.7",
+  "-E",
+  "-m",
+  "ipykernel",
+  "--matplotlib=inline",
+  "-f",
+  "{connection_file}"
+ ],
+ "language": "python",
+ "env":{
+    "LD_LIBRARY_PATH" : "/projects/anaconda2/lib",
+    "PYTHONPATH" : "/projects/anaconda2/lib/python2.7:/projects/anaconda2/lib/python2.7/site-packages",
+    "PYTHONHOME" : "/projects/anaconda2/lib/python2.7"
+ }
+}
+

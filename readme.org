@@ -1,0 +1,27 @@
+
+* build docker cocalc with ananconda
+
+1. Run the script crete_cocalc.sh and inside the container run install_conda.sh
+
+2. go inside cocalc in a shell:
+    
+    docker exec -it cocalc bash
+
+3. in the container install anaconda:
+
+    cd /projects
+    bash install_anaconda.sh 
+
+
+* Moving docker /var to here to avoid problems with disk space
+
+Check for other solutions in: https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/#configure-direct-lvm-mode-for-production
+
+Follow the steps at the end of https://github.com/moby/moby/issues/3127
+
+docker ps -q | xargs docker kill
+service docker stop
+mv /var/lib/docker $dest
+ln -s $dest /var/lib/docker
+service docker start
+
